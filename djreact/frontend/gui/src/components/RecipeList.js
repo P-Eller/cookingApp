@@ -9,8 +9,9 @@ const RecipeList = ({ recipes }) => {
           return (
             <Recipe
               key={i}
-              name={recipe.title}
-              author={recipe.content}
+              name={recipe.name}
+              author={recipe.author}
+              tags={recipe.tags}
               />
           );
         })

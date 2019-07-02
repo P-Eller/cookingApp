@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
-//import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import FilterBar from '../components/FilterBar';
 import RecipeList from '../components/RecipeList';
-//import {recipes} from '../recipes';
-//import 'antd/dist/antd.css';
+import Header from '../components/Header';
 
 class App extends Component {
   constructor() {
@@ -40,7 +38,7 @@ class App extends Component {
     const { recipes, searchfield } = this.state;
     const filteredRecipes = recipes.filter(recipe =>{
       console.log("recipe",recipe)
-      return recipe.title.toLowerCase().includes(searchfield.toLowerCase());
+      return recipe.name.toLowerCase().includes(searchfield.toLowerCase());
     })
     console.log("filtered",filteredRecipes);
     return !recipes.length ?
@@ -48,6 +46,7 @@ class App extends Component {
       (
         <div className='tc'>
           <h1 className='f1'>CookingBook</h1>
+          <Header/>
           
           <SearchBox searchChange={this.onSearchChange}/>
 
