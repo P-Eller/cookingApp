@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import SearchBox from '../components/SearchBox';
-import FilterBar from '../components/FilterBar';
-import RecipeList from '../components/RecipeList';
-import Header from '../components/Header';
+import SearchBox from './components/SearchBox';
+import FilterBar from './components/FilterBar';
+import RecipeList from './components/RecipeList';
+import Header from './components/Header';
+import TestText from './components/TestText';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -47,7 +49,10 @@ class App extends Component {
         <div className='tc'>
           <h1 className='f1'>CookingBook</h1>
           <Header/>
-          
+          <Router>
+            <Route path="/about" component={TestText}/>
+
+          </Router>
           <SearchBox searchChange={this.onSearchChange}/>
 
           <div className="container">
