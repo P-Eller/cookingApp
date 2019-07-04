@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 	'rest_framework',
-    'recipes',
-	'corsheaders'
+    'recipes',	
 ]
 
 MIDDLEWARE = [
@@ -131,4 +131,4 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ORIGION_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL=True

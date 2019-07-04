@@ -35,7 +35,7 @@ this.setState({ searchfield: event.target.value })
 }
 
 render() {
-console.log("render1",this.state);
+
 const { recipes, searchfield, recipeFilter } = this.state;
 const filteredRecipes = recipes.filter(recipe =>{
     return recipe.name.toLowerCase().includes(searchfield.toLowerCase());

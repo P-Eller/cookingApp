@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Recipe = ({ name, author, tags }) => {
+const Recipe = ({ id,name, author, tags }) => {
 
     tags = tags=JSON.parse(tags.replace(/'/g,'"') );
     console.log("tags",tags)
@@ -11,7 +11,7 @@ const Recipe = ({ name, author, tags }) => {
     <div className="card" style={{width: 18 + 'rem'}}>
       <img src="https://img-corp.net/assets/img/IMG_logo_big_blue.png" className="card-img-top" alt="https://img-corp.net/assets/img/IMG_logo_big_blue.png"/>
       <div className="card-body">
-      <Link className="btn btn-primary" to={'/recipes/'+name}>{name}</Link>
+      <Link className="btn btn-primary" to={'/recipes/'+id}>{name}</Link>
         <p className="card-text">{"Author: " + author}</p>
 
         <div>

@@ -12,5 +12,4 @@ class RecipeListView(ListAPIView):
 class RecipeDetailView(RetrieveAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    lookup_field = 'name'
 

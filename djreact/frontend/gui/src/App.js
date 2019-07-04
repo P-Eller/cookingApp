@@ -11,11 +11,12 @@ class App extends Component {
     return(
       <div>
         <h1 className='f1'>CookingBook</h1>
-        <Header/>
         <Router>
+        <Header/>
           <Route exact path="/" component={RecipeListView} />{" "}
           <Route exact path="/about" component={TestText} />{" "}
           <Route exact path="/recipes/:recipeID/" component={RecipeDetailView} />{" "}
+          <Route path="/" >Nothing here - incorrect Link</Route>{" "}
         </Router>
         
       </div>

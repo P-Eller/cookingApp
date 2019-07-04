@@ -1,7 +1,7 @@
     
 import React from "react";
 import axios from "axios";
-//import { connect } from "react-redux";
+import LayoutRecipeView from '../components/LayoutRecipeView';
 
 
 class RecipeDetailView extends React.Component {
@@ -11,20 +11,26 @@ class RecipeDetailView extends React.Component {
 
   componentDidMount() {
     const recipeID = this.props.match.params.recipeID;
-    console.log("reipeID",recipeID);
+
     axios.get(`http://127.0.0.1:8000/api/${recipeID}`).then(res => {
       this.setState({
         recipe: res.data
       });
-      console.log("lalal",this.recipe)
     });
+
   }
 
   render() {
-    console.log("lalala2",this.recipe);
-    return(
+    const recipe = this.state.recipe;
+    console.log("before recipe", recipe, typeof recipe, !!Object.entries(recipe).length);
+    console.log("nammmy",recipe.name);
+    let name=recipe.name;
+
+    return !Object.entries(recipe).length ?
+      <h1>Loading</h1> :
+      (
         <div className='tc'>
-          <h1>Hello World</h1>
+          <LayoutRecipeView recipe={recipe} />
         
         </div>
       );

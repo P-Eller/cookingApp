@@ -2,7 +2,7 @@ from django.db.models import CharField,TextField, Model
 from django_mysql.models import ListCharField
 
 class Recipe(Model):
-    name = CharField(max_length=50)
+    name = CharField(max_length=50, unique=True)
     author= CharField(max_length=20)
     preparation = TextField()
     ingredients = TextField()
