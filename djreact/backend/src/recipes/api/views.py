@@ -9,9 +9,8 @@ class RecipeListView(ListAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
 
-
-
 class RecipeDetailView(RetrieveAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
+    lookup_field = 'name'
 

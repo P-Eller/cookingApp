@@ -3,7 +3,7 @@ from rest_framework import serializers
 from recipes.models import Recipe
 
 
-class RecipeSerializer(serializers.ModelSerializer):
+class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Recipe
         fields = ('id', 'name', 'author', 'preparation','ingredients' , 'tags')

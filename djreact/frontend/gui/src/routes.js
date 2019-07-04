@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowerRouter as Router, Route, Switch } from "react-router-dom";
 
-import ArticleList from "./containers/ArticleListView";
-//import ArticleDetail from "./containers/ArticleDetailView";
+import ArticleListView from "./containers/ArticleListView";
+import ArticleDetailView from "./containers/ArticleDetailView";
 
 
 const BaseRouter = () => (
   <div>
-    <Route exact path="/" component={ArticleList} />{" "}
-    <Route exact path="/articles/:articleID/" component={ArticleDetail} />{" "}
+    <Route exact path="/" component={ArticleListView} />{" "}
+    <Route exact path="/articles/:articleID/" component={ArticleDetailView} />{" "}
   </div>
 );
 
