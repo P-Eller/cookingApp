@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const Recipe = ({ id,name, author, tags }) => {
 
     tags = tags=JSON.parse(tags.replace(/'/g,'"') );
-    console.log("tags",tags)
     
   
   return (

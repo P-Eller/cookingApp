@@ -1,18 +1,18 @@
 import React from 'react';
-import Recipe from './Recipe';
+import Recipe from './RecipeCard';
 
 const RecipeList = ({ recipes }) => {
   return (
     <div>
       {
-        recipes.map((recipe, i) => {
+        recipes.map((aRecipe, i) => {
           return (
             <Recipe
               key={i}
-              id = {recipe.id}
-              name={recipe.name}
-              author={recipe.author}
-              tags={recipe.tags}
+              id = {aRecipe.id}
+              name={aRecipe.name}
+              author={aRecipe.author}
+              tags={aRecipe.tags}
               />
           );
         })

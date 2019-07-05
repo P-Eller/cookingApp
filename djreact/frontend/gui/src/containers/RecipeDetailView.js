@@ -22,9 +22,6 @@ class RecipeDetailView extends React.Component {
 
   render() {
     const recipe = this.state.recipe;
-    console.log("before recipe", recipe, typeof recipe, !!Object.entries(recipe).length);
-    console.log("nammmy",recipe.name);
-    let name=recipe.name;
 
     return !Object.entries(recipe).length ?
       <h1>Loading</h1> :

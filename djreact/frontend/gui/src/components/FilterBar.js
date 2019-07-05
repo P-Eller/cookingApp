@@ -1,8 +1,8 @@
 import React from 'react';
 import CheckBoxBlock from './CheckBoxBlock';
-import {recipeFilters} from '../recipeFilters'
+import {recipeFilters} from '../recipeFilters';
 
-const FilterBar = () => {
+const FilterBar = ({toggleCheckbox}) => {
     return (
         <div>
         {
@@ -14,6 +14,8 @@ const FilterBar = () => {
                   id={recipeFilter.id}
                   name={recipeFilter.name}
                   options={recipeFilter.options}
+                  toggleCheckbox={toggleCheckbox}
+
                   />
               );
 
