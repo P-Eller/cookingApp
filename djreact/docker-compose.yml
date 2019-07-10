@@ -1,21 +1,24 @@
-version: '3'
-
+version: "3.2"
 services:
-  django:
+  backend:
     build: ./backend/src
-    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     volumes:
       - ./backend/src:/app/backend/src
     ports:
       - "8000:8000"
+    stdin_open: true
+    tty: true
+    command: python3 manage.py runserver 0.0.0.0:8000
   frontend:
     build: ./frontend/gui
-    command: ["npm", "start"]
     volumes:
-      - ./frontend/gui:/app/frontend/gui
-      - node-modules:/app/frontend/gui/node_modules
+      - ./frontend/gui:/app
+      # One-way volume to use node_modules from inside image
+      - /app/node_modules
     ports:
       - "3000:3000"
-
-volumes:
-  node-modules:
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    command: npm start
